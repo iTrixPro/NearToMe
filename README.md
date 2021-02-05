@@ -183,12 +183,12 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/iTrixPro/NearToMe.svg?style=for-the-badge
 [contributors-url]: https://github.com/iTrixPro/NearToMe/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/iTrixPro/NearToMe/.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/iTrixPro/NearToMe.svg?style=for-the-badge
 [forks-url]: https://github.com/iTrixPro/NearToMe/network/members
-[stars-shield]: https://img.shields.io/github/stars/iTrixPro/NearToMe/.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/iTrixPro/NearToMe.svg?style=for-the-badge
 [stars-url]: https://github.com/iTrixPro/NearToMe/stargazers
-[issues-shield]: https://img.shields.io/github/issues/iTrixPro/NearToMe/.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/iTrixPro/NearToMe.svg?style=for-the-badge
 [issues-url]: https://github.com/iTrixPro/NearToMe/issues
-[license-shield]: https://img.shields.io/github/license/iTrixPro/NearToMe/.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/iTrixPro/NearToMe.svg?style=for-the-badge
 [license-url]: https://github.com/iTrixPro/NearToMe/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
