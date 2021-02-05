@@ -1,6 +1,3 @@
-# NearToMe
-Cross-platform application which allows to get access or to offer services.
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -17,10 +14,10 @@ Cross-platform application which allows to get access or to offer services.
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">NearToMe</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Cross-platform application which allows to get access or to offer services !
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
