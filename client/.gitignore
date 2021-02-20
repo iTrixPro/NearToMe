@@ -6,6 +6,9 @@ web-build
 # macOS
 .DS_Store
 
+# macOS
+.DS_Store
+
 # Node
 node_modules
 npm-debug.log
@@ -136,3 +139,16 @@ docs/pages/versions/*/react-native/*.diff
 
 # Pods
 /ios/Pods
+
+# Autres
+.vscode/
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
