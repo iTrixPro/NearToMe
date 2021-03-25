@@ -3,9 +3,9 @@ import { Image, Text, TextInput, TouchableOpacity, View } from "react-native"
 
 const Register = () => {
     return (
-        <View style={{ height: "98%", width: "100%", backgroundColor: "#fff9f9", alignItems: "center", borderTopLeftRadius: 50, borderTopRightRadius: 50, position: "absolute", bottom: 0 }}>
+        <View style={{ height: "110%", width: "100%", backgroundColor: "#fff9f9", alignItems: "center", borderTopLeftRadius: 50, borderTopRightRadius: 50, position: "absolute", bottom: 0 }}>
             <View style={{ height: "100%", width: "80%" }}>
-                <TouchableOpacity style={{ height: "10%", width: "100%", position: "relative", justifyContent: "center" }}>
+                <TouchableOpacity style={{ height: "10%", width: "100%", position: "relative", justifyContent: "center", paddingTop: 50, marginBottom: 50 }}>
                     <Text style={{ color: "#1e1e1e", textAlign: "center", fontWeight: "bold", fontSize: 30 }}>Créer un compte</Text>
                     <Image source={require("../assets/NTM/arrow.png")} style={{ height: 33, width: 33, marginLeft: "auto", right: 10, position: "absolute" }}></Image>
                 </TouchableOpacity>

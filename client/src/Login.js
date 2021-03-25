@@ -3,7 +3,7 @@ import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const Login = () => {
     return (
-        <View style={{ height: "90%", width: "100%", alignItems: "center", paddingTop: 100 }}>
+        <View style={{ height: "100%", width: "100%", alignItems: "center", paddingTop: 200, backgroundColor: "#ef5959" }}>
             <View style={{ height: "100%", width: "90%" }}>
                 <Image source={require("../assets/NTM/loginIcon.png")} style={{ alignSelf: "center", marginBottom: 50 }}></Image>
                 <Text style={{ color: "#fff9f9", alignSelf: "flex-start", paddingLeft: 10, fontSize: 19 }}>Adresse mail</Text>

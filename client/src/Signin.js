@@ -7,7 +7,7 @@ import SlidingUpPanel from 'rn-sliding-up-panel';
 
 const Signin = () => {
   return (
-    <View>
+    <View style={{width: "100%", height: "90%" }}>
       <Login></Login>
       <SlidingUpPanel>
         <Register></Register>
