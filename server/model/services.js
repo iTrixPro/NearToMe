@@ -1,22 +1,29 @@
 module.exports = {
-     // Query for the service view
-    get: function (con,callback) {
-        sql = 'SELECT * FROM service '
-        con.query(sql,callback)
-    },
-    getSubCateg: function (con,callback, idCategory) {
+   
+     // get all the category ( for the category view)
+    getCategory:  (con,callback) =>{
        
-        sql = 'SELECT * FROM sub_category WHERE category = '+ idCategory +' ORDER BY name'
-        con.query(sql, callback)
+        stmt = 'SELECT * FROM category ORDER BY name'
+        con.query(stmt, callback)
+        con.end()
     },
-    // Query for the services view
-    getProviderPerSubCateg: function (con,callback, idSubCategory) {
-        sql = 'SELECT first_name, name FROM service INNER JOIN user ON service.user = user.id_user WHERE sub_category = '+ idSubCategory
-        con.query(sql, callback)
+    // get all the subcategory ( for the subcategory view)
+    getSubCateg:  (con, idCategory,callback) =>{
+       
+        stmt = 'SELECT * FROM sub_category WHERE category = ? ORDER BY name'
+        con.query(stmt,[idCategory], callback)
+        con.end()
     },
-    getService: function(con,nameService,callback) {
-        sql = 'SELECT first_name,last_name,name, price , available from service INNER JOIN user ON service.user = user.id_user  WHERE name = '+ nameService
-        con.query(sql,callback)
-    }
+    // get the service of one subcategory( for the services list view)
+    getProviderPerSubCateg:  (con,idSubCategory,callback ) => {
+        stmt = 'SELECT first_name, name, id_service FROM service INNER JOIN user ON service.user = user.id_user WHERE sub_category = ? ' 
+        con.query(stmt,[idSubCategory], callback)
+        con.end()
+    },
+    // get one service of one category( for the provider view)
+    getProvider: function(con,nameService,callback) {
+        stmt = 'SELECT last_name,name, price , available from service INNER JOIN user ON service.user = user.id_user  WHERE name = ?'
+        con.query(stmt,[nameService],callback)
+    },
 
 }
