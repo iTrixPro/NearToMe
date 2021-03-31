@@ -10,6 +10,17 @@ export default particulierStyle = StyleSheet.create({
     },container: {
         flex: 1,
         marginTop: 10,
+    },avatar:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 20
+    },avatarImage:{
+        height: 200,
+        width: 200,
+        borderRadius: 200,
+        borderColor: white,
+        borderWidth: 5,
+        marginBottom: 5
     },tarifs: {
         display: 'flex',
         flexDirection: 'row',
@@ -17,6 +28,12 @@ export default particulierStyle = StyleSheet.create({
         flexWrap: 'wrap'
     },tarif: {
         backgroundColor: white,
+        padding: 20,
+        borderRadius: 20,
+        width: '40%',
+        margin: 10,
+    },tarifSelected: {
+        backgroundColor: primaryColor,
         padding: 20,
         borderRadius: 20,
         width: '40%',
@@ -47,12 +64,34 @@ export default particulierStyle = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
+    },daySelected:{
+        margin: 5,
+        height: 35,
+        width: 35,
+        borderRadius: 20,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: primaryColor
+    },dayPassed:{
+        margin: 5,
+        height: 35,
+        width: 35,
+        borderColor: primaryColor,
+        borderWidth: 1.5,
+        borderRadius: 20,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },dayInvisible:{
         margin: 5,
         height: 35,
         width: 35,
     },dayP:{
         fontWeight: 'bold'
+    },dayPSelected:{
+        fontWeight: 'bold',
+        color: white
     },horaires: {
         marginHorizontal: 30,
         display: 'flex',
@@ -69,9 +108,22 @@ export default particulierStyle = StyleSheet.create({
         padding: 20,
         marginBottom: 20,
         width: 150
+    },horaireSelected: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: primaryColor,
+        borderRadius: 20,
+        padding: 20,
+        marginBottom: 20,
+        width: 150
     },horaireP: {
         fontWeight: 'bold',
         fontSize: 15
+    },horairePSelected: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: white
     },submit:{
         marginTop: 20,
         marginBottom: 100,
@@ -94,5 +146,15 @@ export default particulierStyle = StyleSheet.create({
         fontSize: 10,
         marginVertical: 10,
         textAlign: 'justify',
+    },h1Selected: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: white
+    },pSelected: {
+        fontSize: 10,
+        marginVertical: 10,
+        textAlign: 'justify',
+        color: white
     },
 });
