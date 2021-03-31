@@ -7,7 +7,7 @@ import Confirmer from  "./Confirmer";
 //UseState afin de créer un array de bouttons...
 
 
-let renderTarifs = (title, desc, price) => {
+let renderTarifs = () => {
     const [formule, setFormule] = React.useState(0);
     let array = [
         ["Classic", "formule classique proposant la base de ce que nous pouvons vous proposez.", "20"],
