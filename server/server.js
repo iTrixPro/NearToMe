@@ -12,8 +12,8 @@ var con = mysql.createConnection({
     host:'localhost',
     port:'3306',
     user:'root',
-    password:'',
-    database:'neartome'
+    password:'1234',
+    database:'ntmDB'
 
 });
 app.use(function (req,res,next) {
