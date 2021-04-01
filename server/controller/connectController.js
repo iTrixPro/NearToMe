@@ -16,17 +16,29 @@ module.exports = {
          
             userData.getUser(req.con,email, (err,rows)=> {
                 if (rows.length==0) {
-                    console.log("Connexion incorrecte: la personne "+email +" n'existe pas")
+                    res.json({
+                        "valid" : false,
+                        "message" : "e-mail saisie incorrect !"
+                    })
                 }else{
                        //compare the given password and the hashed password from the database
                        bcrypt.compare(password,rows[0].password,
                         (err,result)=> 
                         { 
                             if (result == true) {
-                                console.log("Bienvenue mr." + rows[0].last_name);
+                                let firstname = rows[0].first_name[0].toUpperCase() + rows[0].first_name.substr(1)
+                                let lastname = rows[0].last_name[0].toUpperCase() + rows[0].last_name.substr(1)
+                                res.json({
+                                    "valid" : true,
+                                    "message" : "Success !",
+                                    "name" : firstname + " " + lastname
+                                })
                                 //Access to the home page
                             } else {
-                                console.log("Wrong username/password combination!" );
+                                res.json({
+                                    "valid" : false,
+                                    "message" : "mot de passe saisie incorrect !"
+                                })
                             }
                         });
        
@@ -36,20 +48,48 @@ module.exports = {
     },
     signup: (req,res) => {
         const {firstName,name,phone,email,password} = req.body;
-        
-        bcrypt.hash(password, saltRounds, (err, hash) => {
-            if (err) 
-            console.log(err);
-            
-            userData.newUser(req.con,name,firstName,phone,email,hash,(err,rows) => {
-                if(err)
-                     throw err;
-                     console.log(password)
-                     console.log(hash)
-                console.log("Création de l'utilisateur " + name+ " " + firstName)
-    
+
+        if (firstName == "") {
+            res.json({
+                "valid" : false,
+                "message" : "Indiquer un prénom !"
             })
-        })
+        } else if (name == "") {
+            res.json({
+                "valid" : false,
+                "message" : "Indiquer un nom !"
+            })
+        } else if (phone == "") {
+            res.json({
+                "valid" : false,
+                "message" : "Indiquer un numéro de téléphone !"
+            })
+        } else if (email == "") {
+            res.json({
+                "valid" : false,
+                "message" : "Indiquer une adresse e-mail !"
+            })
+        } else if (password == "") {
+            res.json({
+                "valid" : false,
+                "message" : "Indiquer un mot de passe !"
+            })
+        } else {
+            bcrypt.hash(password, saltRounds, (err, hash) => {
+                if (err) 
+                console.log(err);
+            
+                userData.newUser(req.con,name,firstName,phone,email,hash,(err,rows) => {
+                    if(err)
+                        throw err;
+                    res.json({
+                        "valid" : true,
+                        "message" : "Success !"
+                    })    
+    
+                })
+            })
+        }
         
  
   },
