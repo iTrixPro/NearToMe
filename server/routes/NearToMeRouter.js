@@ -7,7 +7,7 @@ const homeController = require('../controller/homeController');
 const userController = require('../controller/userController');
 const connectController = require('../controller/connectController');
 const categoryController = require('../controller/categoryController');
-const neartomeController = require('../controller/NearToMeController');
+//const neartomeController = require('../controller/ntmController');
 
 // Home page Declaration
 router.get("/home",homeController.get)
