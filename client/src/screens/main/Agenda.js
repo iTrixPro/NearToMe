@@ -34,7 +34,7 @@ const getDate = () => {
         return(
             <View style={agendaStyle.textArea}>
                 <Text  style = {agendaStyle.date}> {calendar[0]['date']} </Text>
-                <Text  style = {agendaStyle.txt}> {calendar[0]['time']} | {calendar[0]['service']} </Text>
+                <Text  style = {agendaStyle.txt}> {calendar[0]['time']} | rdv chez {calendar[0]['service']} </Text>
             </View>
         )
     }

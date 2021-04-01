@@ -38,6 +38,7 @@ export const ScreenParticulier = (props) => {
                             "date" : date,
                             "time" : hours 
                         })
+                        props.navigation.navigate('Accueil')
                     }}>
                         <Text style={particulierStyle.submitP}>Je veux ce service !</Text>
                     </TouchableOpacity>
