@@ -2,7 +2,11 @@ import React from 'react'
 import { Text, View, TouchableOpacity, ScrollView, Image } from 'react-native'
 import Header from "../../../component/header"
 import particulierStyle from '../../../styles/sub-screens/category/particulier'
+import { setCalendar } from '../../../utils/utils'
 
+let date
+let hours
+const service = "coiffeur (Amid EON)"
 export const ScreenParticulier = (props) => {
     return (
         <ScrollView style={particulierStyle.screen} showsVerticalScrollIndicator = {false}>
@@ -28,7 +32,13 @@ export const ScreenParticulier = (props) => {
                     <View style={particulierStyle.horaires}>
                         {renderHoraires()}
                     </View>
-                    <TouchableOpacity style={particulierStyle.submit}>
+                    <TouchableOpacity style={particulierStyle.submit} onPress = {() => {
+                        setCalendar({
+                            "service" : service,
+                            "date" : date,
+                            "time" : hours 
+                        })
+                    }}>
                         <Text style={particulierStyle.submitP}>Je veux ce service !</Text>
                     </TouchableOpacity>
                 </View>
@@ -96,6 +106,7 @@ let renderCalendar = () => {
         }
     }
 
+    date = daySelected + " " + getDate()
     return result;
 
 }
@@ -117,5 +128,6 @@ let renderHoraires = () => {
         )
     }
 
+    hours = arrayHoraires[horaires].substring(0, arrayHoraires[horaires].indexOf(' '))
     return result;
 }

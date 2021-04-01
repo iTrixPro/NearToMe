@@ -1,7 +1,8 @@
 import React from 'react'
-import { Image, ScrollView, Text, View, StatusBar } from 'react-native'
+import { Image, ScrollView, Text, View } from 'react-native'
 import Header  from '../../component/header'
 import agendaStyle from '../../styles/main/agenda'
+import { getCalendar } from '../../utils/utils'
 
 const path = "../../assets/images/main/agenda/"
 export const AgendaScreen = (props) => {
@@ -17,17 +18,25 @@ export const AgendaScreen = (props) => {
             </View>
             <View style={agendaStyle.block}>
                 <ScrollView style={agendaStyle.scrollContain} showsVerticalScrollIndicator={false}>
-                    <View style={agendaStyle.textArea}>
-                      <Text style={agendaStyle.date}> Aujourd'hui </Text>
-                      <Text style={agendaStyle.txt}> 15 : 30 | Travaux domestiques "Au cheveux doux" </Text>
-                    </View>
-                     
-                    <View style={agendaStyle.textArea}>
-                      <Text style={agendaStyle.date}> Demain </Text>
-                      <Text style={agendaStyle.txt}> 11 : 00 | Beauté "Au cheveux doux" </Text>
-                    </View>
+                    
+                      {getDate()}
+                      
                 </ScrollView>
             </View>
         </View>
     )
+}
+
+const getDate = () => {
+
+    const calendar = getCalendar()
+    if (calendar.length != 0) {
+        return(
+            <View style={agendaStyle.textArea}>
+                <Text  style = {agendaStyle.date}> {calendar[0]['date']} </Text>
+                <Text  style = {agendaStyle.txt}> {calendar[0]['time']} | {calendar[0]['service']} </Text>
+            </View>
+        )
+    }
+    return null
 }
